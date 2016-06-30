@@ -1,5 +1,5 @@
 import numpy as np
-import matplotlib.pyplot as plt
+from sklearn.datasets import load_diabetes
 
 
 class Linreg:
@@ -17,7 +17,7 @@ class Linreg:
         self._theta = None  # regression parameters
         # self._maxiter = None  # maximum iteration
 
-    def fit(self, x_train, y_train, learningrate=0.05, maxiter=200):
+    def fit(self, x_train, y_train, learningrate=0.1, maxiter=200):
         # feed the data
         self._data_train = x_train
         self._target_train = y_train
@@ -40,8 +40,14 @@ class Linreg:
 
         return self._theta
 
+diab = load_diabetes()
+data = diab.data
+target = diab.target
 
+lm = Linreg()
+mlfit = lm.fit(data, target)
 
+print(mlfit)
 
         
 
