@@ -10,24 +10,39 @@ class Linreg:
     of estimates, p-values etc. for model evaluation.
     """
     def __init__(self):
-        self.data_train = None  # empty two-dimensional list
-        self.target_train = None
-        self.data_test = None
-        self.learn_rate = None  # Learning rate for gradient descent algorithm
-        self.theta = None  # regression parameters
-        self.max_iter = None  # maximum iteration
+        self._data_train = None  # empty two-dimensional list
+        self._target_train = None
+        self._data_test = None
+        # self._learn_rate = None  # Learning rate for gradient descent algorithm
+        self._theta = None  # regression parameters
+        # self._maxiter = None  # maximum iteration
 
-    def fit(self, x_train, y_train, learningrate=0.05, maxiter=50):
+    def fit(self, x_train, y_train, learningrate=0.05, maxiter=200):
         # feed the data
-        self.data_train = x_train
-        self.data_test = y_train
+        self._data_train = x_train
+        self._target_train = y_train
+        # self._learn_rate = learningrate
+        # self._maxiter = maxiter
 
         # extract dimensions
-        n_sample, n_feature = self.data_train.shape
+        n_sample, n_feature = np.shape(self._data_train)
 
-        self.learn_rate = learningrate
-        # self.theta = np.ones((self.data_train.shape[1] + 1))
-        self.theta = np.zeros((n_feature + 1))  # parameter initialization, additional '1' for intercept
-        self.max_iter = maxiter
+        # parameter initialization
+        self._theta = np.ones(n_feature)
+
+        for i in range(maxiter):
+            residual = (self._target_train - np.dot(self._data_train, self._theta))
+            cost_func = np.dot(residual.T, residual)/(2 * n_sample)
+            gradient = (1/n_sample) * np.dot(self._target_train.T, residual)
+
+            # update theta
+            self._theta = self._theta - (learningrate * gradient)
+
+        return self._theta
+
+
+
+
+        
 
 
