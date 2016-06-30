@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 class Linreg:
     """
     This class provides methods for estimating parameters of
