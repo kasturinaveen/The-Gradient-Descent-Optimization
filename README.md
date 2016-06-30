@@ -5,6 +5,6 @@ but the core algorithm remains same. In machine learning, it comes under the hoo
 identify the functional relationship (if any) between target and predictor(s) and then to estimate the parameters of the functional form with the help of given data. Estimation of parameters is known
 as **fitting**.  
   
-In this tutorial, we only deal with linear functional forms between target and predictor variables. If we have $$p$$
+In this tutorial, we only deal with linear functional forms between target and predictor variables.
 
 
