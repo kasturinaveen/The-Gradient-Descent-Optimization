@@ -26,7 +26,7 @@ def batch_gradient_descent(init, learning_rate, data_train, target_train, cost_t
     step = 1 # no. of step required to converge
     def _gradient(param_vector):
         """
-        type: private functi on
+        type: private function
         param_vector: vector of parameters
         return: gradient vector evaluated at
                 the given set of parameters
