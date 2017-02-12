@@ -26,3 +26,10 @@ But, note that these codes are created only for learning and these are designed 
 # References: 
 
 + [Stochastic Gradient Descent - by Andrew NG](https://www.youtube.com/watch?v=UfNU3Vhv5CA)
+
+# Future plan
++ a jupyter notebook explaining the theory of gradient descent (almost ready).
++ a separate method for mini-batch gradient descent algorithm.
++ a separate method for cross-entropy cost function, which is very popular for Neural Network models.
+
+these changes will only be reflected in **GradientDescentOptimizer.py**.
