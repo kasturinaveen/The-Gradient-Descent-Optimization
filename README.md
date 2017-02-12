@@ -12,7 +12,7 @@ If the dataset is small or moderate one should consider batch gradient descent a
 
 While calling the modules directly, they simulate random dataset with the specified set of parameters based on a given linear model. The model is in the initial description in each module. Then gradient descent (batch or stochastic) is applied on this dummy dataset to evaluate how the algorithm is performing. 
 
-If one wants to use it for their own dataset, please append the following in the start of your script:
+If one wants to use it for their own dataset, please append the following in the start of the script:
 ```
 from GradientDescentOptimizer import batch_gradient_descent
 #or,
